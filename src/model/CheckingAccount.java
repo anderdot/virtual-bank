@@ -5,16 +5,16 @@ public class CheckingAccount extends Account {
     private double monthlyFee; // taxa mensal
 
     public CheckingAccount() {
+
     }
 
-    @Override
-    public void sacar(double valor) {
-        System.out.println("metodo da classe filha");
-    }
-
-    public CheckingAccount(double balanceLimit, double monthlyFee) {
-        this.balanceLimit = balanceLimit;
-        this.monthlyFee = monthlyFee;
+    public CheckingAccount(String accountNumber, int agency, double balance, 
+                           double balanceLimit, double monthlyFee) {
+        setAccountNumber(accountNumber);
+        setAgency(agency);
+        setBalance(balance);
+        setBalanceLimit(balanceLimit);
+        setMonthlyFee(monthlyFee);
     }
 
     public double getBalanceLimit() {

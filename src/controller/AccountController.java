@@ -19,10 +19,17 @@ public class AccountController {
     public void run() {
         view.welcome();
         this.AccountType = view.selectAccountType();
-        if (this.AccountType == 0) {
-            view.byeMessage();
+        
+        switch (AccountType) {
+            case 1:
+                view.loginAccount(saving);
+                break;
+            case 2:
+                view.loginAccount(checking);
+                break;
+            default: view.byeMessage();
+                break;
         }
-        view.loginAccount(this.AccountType == 1 ? saving : checking);
-        view.switchOperation(this.AccountType == 1 ? saving : checking);
+        // view.switchOperation(this.AccountType == 1 ? saving : checking);
     }
 }

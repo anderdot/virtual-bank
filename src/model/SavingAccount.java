@@ -6,8 +6,12 @@ public class SavingAccount extends Account {
     public SavingAccount() {
     }
 
-    public SavingAccount(double income) {
-        this.income = income;
+    public SavingAccount(String accountNumber, int agency, double balance,
+                         double income) {
+        setAccountNumber(accountNumber);
+        setAgency(agency);
+        setBalance(balance);
+        setIncome(income);
     }
 
     public double getIncome() {

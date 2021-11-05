@@ -5,18 +5,12 @@ public abstract class Account {
     private int agency;
     private double balance;
 
-    public Account() {
-        this.balance = 200;
+    public void deposit(double value) {
+        setBalance(getBalance() + value);
     }
 
-    public void sacar(double valor) {
-        System.out.println("metodo da classe pai");
-    }
-
-    public Account(String accountNumber, int agency, double balance) {
-        this.accountNumber = accountNumber;
-        this.agency = agency;
-        this.balance = balance;
+    public void withdraw(double value) {
+        setBalance(getBalance() - value);
     }
 
     public String getAccountNumber() {
@@ -35,11 +29,11 @@ public abstract class Account {
         this.agency = agency;
     }
 
-    public double getBalance() {
-        return this.balance;
+    protected double getBalance() {
+        return balance;
     }
 
-    public void setBalance(double balance) {
+    protected void setBalance(double balance) {
         this.balance = balance;
     }
 }
