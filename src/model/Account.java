@@ -5,12 +5,22 @@ public abstract class Account {
     private int agency;
     private double balance;
 
-    public void deposit(double value) {
-        setBalance(getBalance() + value);
+    public boolean withdraw(double value) {
+        if (getBalance() - value >= 0 && value > 0) {
+            setBalance(getBalance() - value);
+            return true;
+        }
+        
+        return false;
     }
 
-    public void withdraw(double value) {
-        setBalance(getBalance() - value);
+    public boolean deposit(double value) {
+        if (value > 0) {
+            setBalance(getBalance() + value);
+            return true;
+        }
+        
+        return false;
     }
 
     public String getAccountNumber() {
@@ -29,11 +39,11 @@ public abstract class Account {
         this.agency = agency;
     }
 
-    protected double getBalance() {
+    public double getBalance() {
         return balance;
     }
 
-    protected void setBalance(double balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 }
