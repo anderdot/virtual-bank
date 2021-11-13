@@ -9,6 +9,12 @@ public class Main {
         CheckingAccount checking = new CheckingAccount();
         AccountView view = new AccountView();
         AccountController controller = new AccountController(saving, checking, view);
-        controller.run();
+
+        try {
+            controller.run();
+        } catch (Exception e) {
+            System.out.println("Houve um erro inesperado, tente novamente mais tarde.");
+        }
+        
     }
 }

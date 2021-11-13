@@ -20,21 +20,21 @@ public class CheckingAccount extends Account {
 
     @Override
     public boolean withdraw(double value) {
-        if (getBalance() + getBalanceLimit() - value >= 0 && value > 0) {
+        if (value > 0 && getBalance() + getBalanceLimit() - value >= 0) {
             setBalance(getBalance() - value);
             return true;
         }
-        
+
         return false;
     }
 
     public double calculateMonthlyFee() {
         double fee = getBalance() * getMonthlyFee() / 100;
-        return fee > 0 ? fee : fee * -1;
+        return fee >= 0 ? fee : fee * -1; //inverte
     }
 
     public double getBalanceLimit() {
-        return getBalance() > 0 ? this.balanceLimit : this.balanceLimit + getBalance();
+        return getBalance() >= 0 ? this.balanceLimit : 0;
     }
 
     public void setBalanceLimit(double balanceLimit) {

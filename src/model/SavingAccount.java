@@ -20,7 +20,7 @@ public class SavingAccount extends Account {
     }
 
     public double calculateBalance() {
-        return getBalance() * getIncome() / 100 + getBalance();
+        return calculateIncome() + getBalance();
     }
 
     public double getIncome() {
