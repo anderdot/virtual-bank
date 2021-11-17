@@ -15,6 +15,5 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Houve um erro inesperado, tente novamente mais tarde.");
         }
-        
     }
 }

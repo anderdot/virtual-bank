@@ -6,13 +6,15 @@ import model.CheckingAccount;
 import model.SavingAccount;
 
 public class AccountView {
+    Scanner scanner = new Scanner(System.in);
+
     public void welcomeMessage() {
-        // melhorar
         System.out.println("\nSeja bem vindo ao seu Banco Virtual!\n");
     }
 
     public void byeMessage() {
         System.out.println("Agradecemos pela preferência! Volte sempre ♥");
+        scanner.close();
     }
 
     public void logoutMessage() {
@@ -109,14 +111,8 @@ public class AccountView {
 
     private String getInput() {
         System.out.print("> ");
-        String text = new Scanner(System.in).nextLine();
+        String text = scanner.nextLine();
         System.out.println();
         return text;
     }
-
-    // private void separator() {
-    //     // System.out.println("╚══════════════════════════════════════════╝");
-    //     // System.out.println("╔══════════════════════════════════════════╗");
-    //     System.out.println("--------------------------------------");
-    // }
 }

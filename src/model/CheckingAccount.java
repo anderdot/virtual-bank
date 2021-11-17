@@ -9,15 +9,6 @@ public class CheckingAccount extends Account {
         setMonthlyFee(0.78);
     }
 
-    // public CheckingAccount(String accountNumber, int agency, double balance, 
-    //                        double balanceLimit, double monthlyFee) {
-    //     setAccountNumber(accountNumber);
-    //     setAgency(agency);
-    //     setBalance(balance);
-    //     setBalanceLimit(balanceLimit);
-    //     setMonthlyFee(monthlyFee);
-    // }
-
     @Override
     public boolean withdraw(double value) {
         if (value > 0 && getBalance() + getBalanceLimit() - value >= 0) {

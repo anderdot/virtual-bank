@@ -7,14 +7,6 @@ public class SavingAccount extends Account {
         setIncome(4.57);
     }
 
-    // public SavingAccount(String accountNumber, int agency, double balance,
-    //                      double income) {
-    //     setAccountNumber(accountNumber);
-    //     setAgency(agency);
-    //     setBalance(balance);
-    //     setIncome(income);
-    // }
-
     public double calculateIncome() {
         return getBalance() * getIncome() / 100;
     }
